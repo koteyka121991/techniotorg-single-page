@@ -181,6 +181,35 @@ ul {
     display: block;
   }
 }
+.popup {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.popup__wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.popup__inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.popup__content {
+  background-color: #e1f9e0;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .container {
   max-width: 1200px;
   -webkit-box-align: center;

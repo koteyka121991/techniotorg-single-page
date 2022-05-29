@@ -108,32 +108,52 @@
                  .description-product {
                      ul {
                          display: flex;
+                         color: #014b00;
+                         font-weight: bold;
+                         text-align: center;
                          li {
                              padding: 8px 50px;
                              border: 1px solid #014b00;
                              margin-right: 10px;
-                             border-radius: 5px;
-                             a {
-                                 color: #014b00;
-                             }
+                             border-radius: 5px;                             
+                            
+                             
                          }
                      }
                  }
+                 .description-product {
+                    ul.active {
+                        display: flex;
+                        color: #014b00;
+                        font-weight: bold;
+                        text-align: center;
+                        li {
+                            padding: 8px 50px;
+                            border: 1px solid #014b00;
+                            margin-right: 10px;
+                            border-radius: 5px;                             
+                           
+                            
+                        }
+                    }
+                }
+                .tab-description.active {
+                    background: #014b00;
+                 color: #e1f9e0;
+                }
                  
-                 .description,
-                 .technical-specifications {
+                 
+                 .tab-item {
                      margin: 10px 0;
                      display: none;
+                     transition: 0.6ms;
                  }
                  
-                 .description.active {
+                 .tab-item.active {
                      display: block;
+                    
                  }
-                 
-                 .technical-specifications.active {
-                     display: block;
-                 }
-                 
+               
                  @media (max-width: 1150px) {
                      .galery {
                          display: block;
@@ -151,7 +171,13 @@
                      .galery-row__container {
                          display: none;
                      }
-                 }
+                     .description-product {
+                        ul {
+                            display: block;
+                          }
+                        }
+                    }
+                 
                  
                  .container {
                      max-width: 1200px;

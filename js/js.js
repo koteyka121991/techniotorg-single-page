@@ -139,7 +139,8 @@ document.querySelector('.tab-description').click();
 
 
 
-const headerListScroll = document.querySelector('.header__list');
+const headerListScroll = document.querySelector('.header__list'),
+item = document.querySelector ('.header__contacts-block');
 
 window.addEventListener('scroll', () => {
     let scrollPos = window.scrollY;
@@ -147,6 +148,7 @@ window.addEventListener('scroll', () => {
         headerListScroll.classList.add('active');
         if(window.innerWidth <= 800) {
             headerListScroll.classList.remove('active');
+            item.insertBefore(item,headerListScroll.children[2])
         }
     } else {
         headerListScroll.classList.remove('active');

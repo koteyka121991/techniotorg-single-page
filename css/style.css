@@ -334,7 +334,6 @@ ul {
       -ms-flex-pack: start;
           justify-content: start;
   padding: 20px 0 20px 0;
-  position: fixed;
   background: white;
   z-index: 5;
   width: 100%;

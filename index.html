@@ -20,10 +20,10 @@
 
                     <div class="header__info-block">
                         <div class="logo"><img src="img/logonew.png"></div>
-                        <div class="header__contacts-block">
+                        <div  class="header__contacts-block">
                             <a href="header__contact">г. Волжский, ул. Кирова 19, каб. 107</a>
                         </div>
-                        <div class="header__contacts-block">
+                        <div data-da=".content__column-garden, 900, 1" class="header__contacts-block">
                             <ul>
                                 <li><a href="tel:+79093830775">8 (909) 383-07-75</a></li>
                                 <li><a href="tel:+79033769087">8 (903) 376-90-87</a></li>
@@ -33,9 +33,9 @@
                             <a class="header__btn" href="#">Обратный звонок</a>
                         </div>
                     </div>
-                    <div class="header__menu">
+                    <div class="header__menu content__column-garden">
 
-                        <ul class="header__list">
+                        <ul class="header__list ">
                             <li><a href="#">Техника</a></li>
                             <li><a href="#">Производители</a></li>
                             <li><a href="#">О компании</a></li>
@@ -43,7 +43,7 @@
                             <li><a href="#">Контакты</a></li>
                         </ul>
                         <!-- контакты на мобильном -->
-                        <div class="menu-burger__contacts">
+                        <!-- <div class="menu-burger__contacts">
                             <img src="img/icon/1.png">
                             <a href="tel:+79093830775">8 (909) 383-07-75</a>
                         </div>
@@ -57,7 +57,7 @@
                             <img src="img/icon/2.png">
 
                             <a href="geo:48.810521023520735,44.7506398879949">г. Волжский, ул.Кирова 19, каб. 107</a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -90,8 +90,8 @@
                                         <img src="img/slider/plug.jpg" alt=""></div>
                                     <div class="item">
                                         <img src="img/slider/pln.jpg" alt=""></div>
-                                    <div class="item">
-                                        <img src="img/slider/plug.jpg" alt=""></div>
+                                        <div class="item">
+                                            <img src="img/slider/plug.jpg" alt=""></div>
                                     <a class="arrow-next">&#10095;</a>
                                 </div>
 
@@ -347,51 +347,25 @@
                     </div>
                 </div>
             </footer>
-            <!-- /.popup-menu -->
+            <div class="popup">
+              
+                    <div class="popup__wrapper">
+                        <div class="popup__inner">
+                            <div class="popup__content">
+                               <button class="btn-close popup__popup__content">
 
-            <!-- popup-order -->
-            <div class="popup popup-order">
-                <div class="popup__wrapper">
-                    <div class="popup__inner">
-                        <div class="popup__content">
-                            <button class="btn-close popup__btn-close"></button>
-                            <div class="popup__form">
-                                <h2 class="page-title popup__title">Оставьте ваши контактные данные и наш консультант свяжется с вами</h2>
-                                <input class="name" placeholder="Ваше имя">
-                                <input class="phone" placeholder="Телефон">
-                                <div class="button">
-                                    <a class="header__btn" href="#">Отправить</a>
-                                </div>
+                               </button>
                             </div>
-
-
                         </div>
                     </div>
-                </div>
+
+                
             </div>
-            <!-- /.popup-order -->
-
-            <!-- /.popup-thanks -->
-            <div class="popup popup-thanks">
-                <div class="popup__wrapper">
-                    <div class="popup__inner">
-                        <div class="popup__content">
-                            <button class="btn-close popup__btn-close"></button>
-                            <div class="popup__form">
-                                <h2 class="page-title popup__title">Успешно отправлено</h2>
-                                <p>Спасибо за обращение! Наш менеджер свяжеться с Вами в ближайшее время. </p>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.popup-thanks -->
         </div>
     </div>
 
     <script src="js/js.js"></script>
+    <script src="js/dynamicAdapt_dev.js"></script>
 </body>
 
 </html>

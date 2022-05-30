@@ -145,6 +145,9 @@ window.addEventListener('scroll', () => {
     let scrollPos = window.scrollY;
     if (scrollPos > 0) {
         headerListScroll.classList.add('active');
+        if(window.innerWidth <= 800) {
+            headerListScroll.classList.remove('active');
+        }
     } else {
         headerListScroll.classList.remove('active');
     }

@@ -603,9 +603,8 @@ ul {
     margin: -15px auto;
   }
 
-  .header__contacts-block,
-.button {
-    display: none;
+  .header__info-block {
+    display: block;
   }
 
   .header_menu {

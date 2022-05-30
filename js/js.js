@@ -111,31 +111,41 @@ menuBurger.addEventListener('click', () => {
 
 
 const tabsBtn = document.querySelectorAll('.tab-description'),
-tabsItem = document.querySelectorAll('.tab-item');
+    tabsItem = document.querySelectorAll('.tab-item');
 
 tabsBtn.forEach(oneTabClick);
 
 
-function oneTabClick (item) {
+function oneTabClick(item) {
     item.addEventListener('click', () => {
         let currentBtn = item;
-        let tabId = currentBtn.getAttribute('data-tab');       
-       let currentTab = document.querySelector(tabId);
-       if (!currentBtn.classList.contains('active')){
-        tabsBtn.forEach((item) => {                          
-            item.classList.remove('active');
-        })
-        tabsItem.forEach((item) => {                          
-            item.classList.remove('active');
-        })
-      }
-            currentBtn.classList.add ('active');
-            currentTab.classList.add ('active');
+        let tabId = currentBtn.getAttribute('data-tab');
+        let currentTab = document.querySelector(tabId);
+        if (!currentBtn.classList.contains('active')) {
+            tabsBtn.forEach((item) => {
+                item.classList.remove('active');
+            })
+            tabsItem.forEach((item) => {
+                item.classList.remove('active');
+            })
+        }
+        currentBtn.classList.add('active');
+        currentTab.classList.add('active');
     });
 }
 document.querySelector('.tab-description').click();
 
+// header menu scroll
 
 
-// poput menu
 
+const headerListScroll = document.querySelector('.header__list');
+
+window.addEventListener('scroll', () => {
+    let scrollPos = window.scrollY;
+    if (scrollPos > 0) {
+        headerListScroll.classList.add('active');
+    } else {
+        headerListScroll.classList.remove('active');
+    }
+});

@@ -140,17 +140,47 @@ document.querySelector('.tab-description').click();
 
 
 const headerListScroll = document.querySelector('.header__list'),
-item = document.querySelector ('.header__contacts-block');
+    headerMenuScroll = document.querySelector('.header__menu-mini');
+// Получаем ссылку на элемент в который мы хотим добавить новый элемент
+let parentElement = document.querySelector('.parentElement');
+let after = document.querySelector('.after');
+let parent = document.querySelector('.header__info-block')
+let second = document.querySelector('.second')
+
+// Получаем ссылку на первый дочерний элемент
+let theSecondChild = parentElement.secondChild;
+
+
+// Создаём новый элемент, который будем добавлять
+let newElement = document.createElement("div");
+
 
 window.addEventListener('scroll', () => {
     let scrollPos = window.scrollY;
     if (scrollPos > 0) {
-        headerListScroll.classList.add('active');
-        if(window.innerWidth <= 800) {
-            headerListScroll.classList.remove('active');
-            item.insertBefore(item,headerListScroll.children[2])
+        // headerListScroll.classList.add('active');
+        headerMenuScroll.classList.add('active');
+        parentElement.insertBefore(newElement, theSecondChild);
+        parentElement.insertBefore(after, theSecondChild);
+        parent.insertBefore(after, before);
+
+
+        if (window.innerWidth <= 800) {
+
+            headerMenuScroll.classList.remove('active');
+            parent.insertBefore(after, second);
+
         }
     } else {
-        headerListScroll.classList.remove('active');
+        headerMenuScroll.classList.remove('active');
+        parent.insertBefore(after, second);
     }
 });
+
+// let parent = document.querySelector('.parent');
+// let parentMain = document.querySelector('.header__info-block');
+// let before = document.querySelector('.before');
+// let after = document.querySelector('.after');
+
+
+// Вставляем новый элемент перед первым дочерним элементом

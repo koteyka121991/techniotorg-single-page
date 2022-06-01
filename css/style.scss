@@ -351,6 +351,8 @@
                      background: white;
                      padding: 10px;
                      transition: 1s;
+                     justify-content: space-between;
+                     max-width: 1200px;
                  }
                  
                  //  мобильное меню
@@ -596,12 +598,12 @@
                  }
                  
                  @media (max-width: 800px) {
-                     .item.logo.after._dynamic_adapt_ {
-                         text-align: center;
-                         z-index: 1;
-                         position: relative;
-                         margin: 0 10%;
-                     }
+                    .header__menu-mini.active {
+                        display: none;
+                    }
+                    .item.logo.after {
+                        text-align: center;
+                    }
                      // мобильное меню
                      .header__info-block {
                          display: block;

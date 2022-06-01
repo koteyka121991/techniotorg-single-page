@@ -96,15 +96,29 @@ const menuBurger = document.querySelector('.menu-burger'),
     menuBurgerSpan = document.querySelector('.menu-burger span'),
     menuList = document.querySelector('.header__menu'),
     mobileWrapper = document.querySelector('.mobile-wrapper');
+   
 
 menuBurger.addEventListener('click', () => {
     menuBurgerSpan.classList.toggle('active');
     menuList.classList.toggle('animate');
     mobileWrapper.classList.toggle('animate');
+    // parentElement.insertBefore(newElement, theSecondChild);
+    //     parentElement.insertBefore(parent, theSecondChild);
+    //     headerMenuMiniUp.insertBefore(after, theSecondChild);
+      
+           
 })
 
 
+// if (window.innerWidth > 750) {
+//     parentElement.insertBefore(newElement, theSecondChild);
+//     headerMenuMiniUp.insertBefore(parent, after);
+   
+// //     // // console.log(1)
+   
+// }
 
+// }
 
 // кнопки табов 
 
@@ -143,12 +157,15 @@ const headerListScroll = document.querySelector('.header__list'),
     headerMenuScroll = document.querySelector('.header__menu-mini');
 // Получаем ссылку на элемент в который мы хотим добавить новый элемент
 let parentElement = document.querySelector('.parentElement');
+let headerMenuMiniUp = document.querySelector ('.header__menu-mini_up')
 let after = document.querySelector('.after');
 let parent = document.querySelector('.header__info-block')
 let second = document.querySelector('.second')
 
 // Получаем ссылку на первый дочерний элемент
+let thefirstChild= headerMenuMiniUp.secondChild;
 let theSecondChild = parentElement.secondChild;
+
 
 
 // Создаём новый элемент, который будем добавлять
@@ -162,13 +179,13 @@ window.addEventListener('scroll', () => {
         headerMenuScroll.classList.add('active');
         parentElement.insertBefore(newElement, theSecondChild);
         parentElement.insertBefore(after, theSecondChild);
-        parent.insertBefore(after, before);
+       
 
 
-        if (window.innerWidth <= 800) {
+        if (window.innerWidth <= 800) { 
 
-            headerMenuScroll.classList.remove('active');
-            parent.insertBefore(after, second);
+            headerMenuScroll.classList.remove('active');  
+                 
 
         }
     } else {

@@ -374,6 +374,10 @@ ul {
   padding: 10px;
   -webkit-transition: 1s;
   transition: 1s;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1200px;
 }
 
 .mobile-menu {
@@ -620,11 +624,12 @@ ul {
   }
 }
 @media (max-width: 800px) {
-  .item.logo.after._dynamic_adapt_ {
+  .header__menu-mini.active {
+    display: none;
+  }
+
+  .item.logo.after {
     text-align: center;
-    z-index: 1;
-    position: relative;
-    margin: 0 10%;
   }
 
   .header__info-block {

@@ -168,7 +168,7 @@ window.addEventListener('scroll', () => {
         if (window.innerWidth <= 800) {
 
             headerMenuScroll.classList.remove('active');
-            parent.insertBefore(after, second);
+
 
         }
     } else {

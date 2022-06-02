@@ -97,18 +97,14 @@ const menuBurger = document.querySelector('.menu-burger'),
     menuList = document.querySelector('.header__menu'),
     mobileWrapper = document.querySelector('.mobile-wrapper');
 
+
 menuBurger.addEventListener('click', () => {
     menuBurgerSpan.classList.toggle('active');
     menuList.classList.toggle('animate');
     mobileWrapper.classList.toggle('animate');
 })
 
-
-
-
 // кнопки табов 
-
-
 
 const tabsBtn = document.querySelectorAll('.tab-description'),
     tabsItem = document.querySelectorAll('.tab-item');
@@ -141,39 +137,22 @@ document.querySelector('.tab-description').click();
 
 const headerListScroll = document.querySelector('.header__list'),
     headerMenuScroll = document.querySelector('.header__menu-mini');
-// Получаем ссылку на элемент в который мы хотим добавить новый элемент
-let parentElement = document.querySelector('.parentElement');
-let after = document.querySelector('.after');
-let parent = document.querySelector('.header__info-block')
-let second = document.querySelector('.second')
-
-// Получаем ссылку на первый дочерний элемент
-let theSecondChild = parentElement.secondChild;
-
-
-// Создаём новый элемент, который будем добавлять
-let newElement = document.createElement("div");
+let logoScroll = document.querySelector('.logo-scroll'),
+    parentList = document.querySelector('.parent-list');
 
 
 window.addEventListener('scroll', () => {
     let scrollPos = window.scrollY;
     if (scrollPos > 0) {
-        // headerListScroll.classList.add('active');
         headerMenuScroll.classList.add('active');
-        parentElement.insertBefore(newElement, theSecondChild);
-        parentElement.insertBefore(after, theSecondChild);
-        parent.insertBefore(after, before);
-
-
+        parentList.insertAdjacentElement("afterend", logoScroll);
         if (window.innerWidth <= 800) {
-
             headerMenuScroll.classList.remove('active');
-
 
         }
     } else {
         headerMenuScroll.classList.remove('active');
-        parent.insertBefore(after, second);
+
     }
 });
 

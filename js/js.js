@@ -95,14 +95,21 @@ arrowPrew.addEventListener('click', prewSlide)
 const menuBurger = document.querySelector('.menu-burger'),
     menuBurgerSpan = document.querySelector('.menu-burger span'),
     menuList = document.querySelector('.header__menu'),
-    mobileWrapper = document.querySelector('.mobile-wrapper');
+    mobileWrapper = document.querySelector('.mobile-wrapper')
+headerInfoBlockItem = document.querySelector('.info-line');
 
 
 menuBurger.addEventListener('click', () => {
     menuBurgerSpan.classList.toggle('active');
     menuList.classList.toggle('animate');
     mobileWrapper.classList.toggle('animate');
-})
+    headerInfoBlockItem.classList.toggle('active')
+    parentList.insertAdjacentElement("afterend", headerInfoBlockItem);
+
+});
+
+
+
 
 // кнопки табов 
 
@@ -138,7 +145,9 @@ document.querySelector('.tab-description').click();
 const headerListScroll = document.querySelector('.header__list'),
     headerMenuScroll = document.querySelector('.header__menu-mini');
 let logoScroll = document.querySelector('.logo-scroll'),
-    parentList = document.querySelector('.parent-list');
+    parentList = document.querySelector('.parent-list'),
+    parentHeader = document.querySelector('.parent-header'),
+    parenReturnDesctop = document.querySelector('.menu-burger');
 
 
 window.addEventListener('scroll', () => {
@@ -148,13 +157,30 @@ window.addEventListener('scroll', () => {
         parentList.insertAdjacentElement("afterend", logoScroll);
         if (window.innerWidth <= 800) {
             headerMenuScroll.classList.remove('active');
+            parenReturnDesctop.insertAdjacentElement("afterend", logoScroll);
+            // parentHeader.insertAdjacentElement("afterbegin", logoScroll);
+            //
+
 
         }
     } else {
         headerMenuScroll.classList.remove('active');
+        parentHeader.insertAdjacentElement("afterbegin", logoScroll);
+        // // parenReturnDesctop.insertAdjacentElement("afterend", logoScroll);
 
     }
 });
+
+
+
+window.addEventListener('resize', () => {
+
+    if (window.innerWidth > 800) {
+        parentHeader.insertAdjacentElement("beforeend", headerInfoBlockItem);
+    }
+
+})
+
 
 // let parent = document.querySelector('.parent');
 // let parentMain = document.querySelector('.header__info-block');

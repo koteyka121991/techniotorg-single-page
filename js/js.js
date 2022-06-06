@@ -56,7 +56,7 @@ const prewSlide = () => {
 }
 
 const nextGaleryRow = () => {
-    if (position < (slides.length - 4) * 200) {
+    if (position < (slides.length - 4) * 210) {
         position += 210
     } else {
         position = 0
@@ -66,7 +66,7 @@ const nextGaleryRow = () => {
 }
 
 const prewGaleryRow = () => {
-    if (position < (slides.length - 4) * 200) {
+    if (position < (slides.length - 4) * 210) {
         position += 210
     } else {
         position = 0

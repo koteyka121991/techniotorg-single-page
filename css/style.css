@@ -378,7 +378,6 @@ ul {
 }
 .header__list ul {
   display: block !important;
-  visibility: hidden;
   opacity: 0;
 }
 .header__list ul li {

@@ -1,767 +1,710 @@
-             /*
+                             /*
  Theme name: Technotorg
  */
-             
-             *,
-             *:before,
-             *:after {
-                 padding: 0;
-                 margin: 0;
-                 border: 0;
-                 box-sizing: border-box;
-             }
-             
-             html,
-             body {
-                 margin: 0;
-                 font-family: 'Manrope', sans-serif;
-                 color: rgb(27, 21, 7);
-                 font-size: 14px;
-                 line-height: 24px;
-             }
-             
-             a {
-                 color: rgb(27, 21, 7);
-                 font-weight: bold;
-                 text-decoration: none;
-             }
-             
-             h1,
-             h2 {
-                 font-size: 20px;
-                 text-align: center;
-             }
-             
-             ul {
-                 list-style: none;
-             }
-             
-             //  single page
-             //  galery
-             .galery {
-                 max-width: 1200px;
-                 margin: 0 auto;
-                 position: relative;
-                 transition: 1s;
-                 display: flex;
-             }
-             
-             .galery-wrapper {
-                 .galery-items {
-                     display: flex;
-                     //  max-height: 500px;
-                     margin: 10px 10px 0 10px;
-                     cursor: pointer;
-                     max-height: 500px;
-                     overflow: hidden;
-                     object-fit: contain;
-                     .arrow-prew,
-                     .arrow-next {
-                         margin: 20% 10px;
-                     }
-                     .item {
-                         width: 100%;
-                         height: 100%;
-                         transition: background-color 0.6s ease;
-                         display: none;
-                         object-fit: contain;
-                         img {
-                             width: 100%;
-                             border: none !important;
-                             box-shadow: none !important;
-                         }
-                     }
-                     .item.active {
-                         display: block;
-                     }
-                 }
-             }
-             
-             .galery-row__container {
-                 max-width: 800px;
-                 overflow: hidden;
-                 height: 200px;
-             }
-             
-             .galery-row {
-                 display: flex;
-                 position: relative;
-                 img {
-                     cursor: pointer;
-                     height: 150px;
-                     width: 200px;
-                     margin: 10px 5px 15px;
-                     object-fit: contain;
-                     transition: background-color 0.6s ease;
-                     opacity: 0.5;
-                 }
-                 img.active {
-                     opacity: 1;
-                 }
-             }
-             
-             .short-description {
-                 margin: 0 0 0 10px;
-                 .button {
-                     text-align: center;
-                     margin: 15px 0 25px;
-                 }
-             }
-             
-             .description-product {
-                 ul {
-                     display: flex;
-                     color: #014b00;
-                     font-weight: bold;
-                     text-align: center;
-                     li {
-                         padding: 8px 50px;
-                         border: 1px solid #014b00;
-                         margin-right: 10px;
-                         border-radius: 5px;
-                     }
-                 }
-             }
-             
-             .description-product {
-                 ul.active {
-                     display: flex;
-                     color: #014b00;
-                     font-weight: bold;
-                     text-align: center;
-                     li {
-                         padding: 8px 50px;
-                         border: 1px solid #014b00;
-                         margin-right: 10px;
-                         border-radius: 5px;
-                     }
-                 }
-             }
-             
-             .tab-description.active {
-                 background: #014b00;
-                 color: #e1f9e0;
-                 transition: 1s;
-             }
-             
-             .tab-item {
-                 margin: 10px 0;
-                 display: none;
-             }
-             
-             .tab-item.active {
-                 display: block;
-             }
-             
-             @media (max-width: 1150px) {
-                 .galery {
-                     display: block;
-                 }
-                 .galery-wrapper {
-                     max-width: 1000px;
-                     .galery-row__container {
-                         overflow: hidden;
-                         margin: 0 auto;
-                     }
-                 }
-             }
-             
-             @media (max-width: 800px) {
-                 .galery-row__container {
-                     display: none;
-                 }
-                 .description-product {
-                     ul {
-                         display: block;
-                     }
-                 }
-             }
-             
-             // popup-menu      
-             .popup {
-                 position: fixed;
-                 z-index: 10;
-                 top: 0;
-                 left: 0;
-                 background: rgba(0, 0, 0, .7);
-                 width: 100%;
-                 height: 100%;
-                 overflow: auto;
-                 pointer-events: none;
-                 opacity: 0;
-                 visibility: hidden;
-             }
-             
-             .popup__form {
-                 max-width: 250px;
-                 display: block;
-                 margin: 0 auto;
-                 .button {
-                     margin: 15px auto;
-                     text-align: center;
-                 }
-                 input {
-                     height: 25px;
-                     margin: 5px 40px;
-                     text-align: center;
-                     border-radius: 30px;
-                     background: white;
-                     margin-bottom: 8px;
-                     color: #014b00;
-                     font-weight: bold;
-                     padding: 20px 0;
-                     border: 2px solid transparent;
-                     outline: none;
-                 }
-                 p {
-                     text-align: center;
-                 }
-             }
-             
-             .popup__form {
-                 input:focus {
-                     border: 2px #014b00 solid;
-                 }
-             }
-             
-             .popup.active {
-                 pointer-events: auto;
-                 opacity: 1;
-                 visibility: visible;
-             }
-             
-             .popup__wrapper {
-                 display: table;
-                 height: 100%;
-                 width: 100%;
-             }
-             
-             .popup__inner {
-                 display: table-cell;
-                 vertical-align: middle;
-                 padding: 50px 0;
-             }
-             
-             .popup__content {
-                 background: #e1f9e0;
-                 padding: 20px 0;
-                 max-width: 400px;
-                 margin: 0 auto;
-                 position: relative;
-                 border-radius: 20px;
-             }
-             
-             .btn-close {
-                 border: none;
-                 cursor: pointer;
-                 background: none;
-                 padding: 0;
-                 width: 50px;
-                 height: 50px;
-                 display: inline-block;
-                 transition: 1s, opacity .2s;
-                 position: absolute;
-                 top: 20px;
-                 right: 20px;
-             }
-             
-             .btn-close:hover {
-                 transform: scale(1.5);
-             }
-             
-             .btn-close.active {
-                 transform: scale(0.9);
-                 opacity: .8;
-             }
-             
-             .btn-close::before,
-             .btn-close::after {
-                 content: '';
-                 background: #014b00;
-                 height: 40px;
-                 width: 3px;
-                 position: absolute;
-                 border-radius: 10px;
-                 top: 50%;
-             }
-             
-             .btn-close::before {
-                 transform: translateY(-50%) rotate(45deg);
-             }
-             
-             .btn-close::after {
-                 transform: translateY(-50%) rotate(-45deg);
-             }
-             
-             .container {
-                 max-width: 1200px;
-                 align-items: center;
-                 margin: 0 auto;
-                 padding: 0 10px 0 10px;
-             }
-             
-             .header_menu {
-                 max-width: 1200px;
-                 margin: 0 auto;
-                 padding: 0 10px 0 10px;
-             }
-             
-             .header__info-block {
-                 display: flex;
-                 align-items: center;
-                 max-width: 1200px;
-                 justify-content: space-between;
-                 .info-line {
-                     display: flex;
-                     justify-content: space-between;
-                     width: 70%;
-                     align-items: center;
-                 }
-             }
-             
-             .header__contact {
-                 display: flex;
-                 .item {
-                     display: flex;
-                 }
-             }
-             
-             .header__menu-mini {
-                 width: 100%;
-                 display: flex;
-                 z-index: 5;
-                 transition: 1s;
-                 position: relative;
-             }
-             
-             //   меню навигации начало 
-             /* nav-wrap */
-             ul.header__list {
-                 display: flex;
-                 li {
-                     margin: 0 20px;
-                 }
-             }
-            //  sub-menu
-            ul.header__list {                
-                    ul {
-                        position: absolute;
-                       background: #e1f9e0;
-                       margin: 0 5px;
-                      a {
-                          background: #e1f9e0;
-                          
-                      }
-                        ul {
-                            left: 100%;
-                            top: 0
-                        }
-                    }
-                
-            }
-            
-             //  мобильное меню
-             .mobile-menu {
-                 display: none;
-             }
-             
-             //  слайдер
-             // 
-             .slider {
-                 max-width: 1200px;
-                 margin: 0 auto;
-                 position: relative;
-                 transition: 1s;
-                 display: flex;
-                 .button {
-                     margin: 10px auto;
-                 }
-             }
-             
-             .slider-wrapper {
-                 max-width: 600px;
-             }
-             
-             .slider-items {
-                 max-width: 600px;
-                 display: flex;
-                 //  max-height: 500px;
-                 margin: 10px 10px 0 10px;
-                 cursor: pointer;
-             }
-             
-             .slide-item {
-                 width: 100%;
-                 height: 100%;
-                 display: none;
-                 transition: background-color 0.6s ease;
-             }
-             
-             .slide-item.active {
-                 display: block;
-             }
-             
-             .slide-item img {
-                 object-fit: cover;
-                 width: 100%;
-                 border: none !important;
-                 box-shadow: none !important;
-             }
-             
-             .slider-dots__box {
-                 overflow: hidden;
-                 max-width: 600px;
-             }
-             
-             .slider-dots {
-                 display: flex;
-                 img {
-                     cursor: pointer;
-                     height: 200px;
-                     width: 200px;
-                     margin: 10px 5px 15px;
-                     object-fit: contain;
-                     //  display: inline-block;
-                     transition: background-color 0.6s ease;
-                     opacity: 0.5;
-                 }
-                 span.active {
-                     opacity: 1;
-                 }
-             }
-             
-             @media (max-width: 700px) {
-                 .slider-dots {
-                     display: none;
-                 }
-             }
-             
-             //  .dot {
-             //      cursor: pointer;
-             //      height: 15px;
-             //      width: 15px;
-             //      margin: 10px 5px 15px;
-             //      background: #014b00;
-             //      border-radius: 50%;
-             //      //  display: inline-block;
-             //      transition: background-color 0.6s ease;
-             //      opacity: 0.5;
-             //  }
-             // 
-             /* Анимация слайдов */
-             
-             .slide-item {
-                 -webkit-animation-name: fade;
-                 -webkit-animation-duration: 1.5s;
-                 animation-name: fade;
-                 animation-duration: 1.5s;
-             }
-             
-             @-webkit-keyframes fade {
-                 from {
-                     opacity: .4
-                 }
-                 to {
-                     opacity: 1
-                 }
-             }
-             
-             @keyframes fade {
-                 from {
-                     opacity: .4
-                 }
-                 to {
-                     opacity: 1
-                 }
-             }
-             
-             //  категории начало
-             .main {
-                 transition: 1s;
-             }
-             
-             .content__category {
-                 margin: 0 auto;
-             }
-             
-             .category__items {
-                 display: flex;
-                 max-width: 1200px;
-                 flex-wrap: wrap;
-                 justify-content: start;
-                 margin: 0 auto;
-             }
-             
-             .category__item {
-                 display: block;
-                 position: relative;
-                 margin: 10px auto;
-                 //  max-width: 30%;
-             }
-             
-             .category__item img {
-                 width: 100%;
-             }
-             
-             //  main меню
-             //  футер
-             .footer {
-                 width: 100%;
-                 height: 100%;
-                 background: rgb(28, 21, 7);
-                 margin: 20px 0;
-             }
-             
-             .footer-row {
-                 flex-wrap: wrap;
-                 display: flex;
-                 color: #e1f9e0;
-                 justify-content: space-between;
-                 margin: 10px auto;
-             }
-             
-             .footer-row a {
-                 color: #e1f9e0;
-             }
-             
-             .footer-col {
-                 text-align: center;
-                 padding-top: 20px;
-             }
-             /*------------кнопка ----------*/
-             
-             .btn {
-                 position: absolute;
-                 width: 200px;
-                 line-height: 35px;
-                 color: #e1f9e0;
-                 background-color: #014b00;
-                 border-radius: 8px 8px;
-                 transition: background-color .2s linear;
-                 opacity: .9;
-                 text-align: center;
-                 font-size: 16px;
-                 font-weight: 400;
-                 margin: auto;
-                 top: 80%;
-                 left: 0;
-                 right: 0;
-             }
-             
-             .btn:hover {
-                 background-color: rgb(41 31 7);
-                 opacity: 1;
-             }
-             
-             .header__btn {
-                 padding: 10px 20px;
-                 color: #e1f9e0;
-                 background-color: #014b00;
-                 border-radius: 8px 8px;
-                 transition: background-color .2s linear;
-                 text-align: center;
-                 font-weight: 400;
-             }
-             
-             .header__btn:hover {
-                 background-color: rgb(41 31 7);
-                 opacity: 1;
-             }
-             
-             @media (min-width: 1001px) {
-                 .category__item {
-                     width: 30%;
-                 }
-                 .menu-burger__contacts {
-                     display: none;
-                 }
-             }
-             
-             @media (min-width: 800px) and (max-width: 1000px) {
-                 .menu-burger__contacts {
-                     display: none;
-                 }
-                 .category__items {
-                     max-width: 100%;
-                     padding: 0 auto;
-                 }
-                 .category__item {
-                     margin: 0 auto;
-                     width: 47%;
-                 }
-             }
-             
-             @media (max-width: 799px) {
-                 .category__items {
-                     max-width: 100%;
-                     padding: 0 10px;
-                 }
-                 .category__item {
-                     width: 100%;
-                     margin: 0 auto;
-                 }
-             }
-             
-             @media (max-width: 800px) {
-                 .logo {
-                     text-align: center;
-                 }
-                 // мобильное меню
-                 .header__info-block {
-                     display: block;
-                     .info-line {
-                         display: none;
-                     }
-                     .info-line.active {
-                         display: block;
-                     }
-                 }
-                 .header_menu {
-                     max-width: 100%;
-                     height: 50px;
-                     display: block;
-                     background: white;
-                 }
-                 .mobile-menu__header {
-                     justify-content: space-between;
-                     height: 60px;
-                     border-bottom: 2px solid #014b00;
-                 }
-                 .header__menu-mini {
-                     display: block;
-                 }
-                 ul.header__list li {
-                    position: relative;
-                    list-style: none;
-                    height: 48px;
-                    display: flex;
-                }
-                 
-
-          
-                 // меню бургер
-                 .menu-burger {
-                     position: absolute;
-                     width: 35px;
-                     height: 35px;
-                     cursor: pointer;
-                     top: 5px;
-                     left: 10px;
-                 }
-                 .menu-burger span,
-                 .menu-burger span:before,
-                 .menu-burger span:after {
-                     position: absolute;
-                     width: 100%;
-                     height: 5px;
-                     background: #014b00;
-                     display: block;
-                     transition: 0.3s;
-                     border-radius: 5px;
-                 }
-                 .menu-burger span:before {
-                     content: "";
-                     top: -10px;
-                     transition: top 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
-                 }
-                 .menu-burger span {
-                     top: 20px;
-                 }
-                 .menu-burger span:after {
-                     content: "";
-                     bottom: -10px;
-                     transition: bottom 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
-                 }
-                 .menu-burger span.active:before {
-                     content: "";
-                     top: 0px;
-                     transform: rotate(45deg);
-                     transition: top 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-                 }
-                 .menu-burger span.active:after {
-                     content: "";
-                     bottom: 0;
-                     transform: rotate(-45deg);
-                     transition: bottom 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-                 }
-                 .menu-burger span.active {
-                     background: rgb(255, 255, 255);
-                 }
-                 .menu-burger__logo img {
-                     display: block;
-                     margin-left: auto;
-                     margin-right: auto;
-                 }
-                 .header__menu {
-                     display: block;
-                     width: 100%;
-                     height: 100%;
-                     height: auto;
-                     position: absolute;
-                     top: 10px;
-                     left: -800px;
-                     transition: 0.5s;
-                     transform: translateX();
-                 }
-                 .header__menu.animate {
-                     top: 10px;
-                     left: 30px;
-                     line-height: 40px;
-                     transition: top 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-                     //  z-index: 3000;   
-                     position: relative;
-                     display: block;
-                 }
-                 
-                 .menu-burger__list {
-                     padding: 19px 20px 5px 19px;
-                 }
-                 .menu-burger__contacts {
-                     padding: 5px 20px 5px 19px;
-                     img {
-                         width: 20px;
-                         margin-right: 10px;
-                     }
-                 }
-                 .slider.active {
-                     transform: translateY(100%);
-                 }
-                 .mobile-wrapper {
-                     transition: 0.5s;
-                 }
-                 .mobile-wrapper.animate {
-                     transition: 0.5s;
-                     //  transform: translateY(410px);
-                 }
-                 .header__menu.animate {
-                     transform: translateY(0);
-                     transition: 0.5s;
-                 }
-                 .main {
-                     margin: 20px auto;
-                     transition: 2s;
-                 }
-                 .footer-row {
-                     display: block;
-                 }
-             }
-             
-             @media (max-width: 400px) {
-                 .btn {
-                     position: absolute;
-                     width: 150px;
-                     line-height: 30px;
-                     color: #e1f9e0;
-                     background-color: #014b00;
-                     border-radius: 8px 8px;
-                     transition: background-color .2s linear;
-                     opacity: .9;
-                     text-align: center;
-                     font-size: 14px;
-                     font-weight: 400;
-                     margin: auto;
-                     top: 80%;
-                     left: 0;
-                     right: 0;
-                 }
-             }
+                             
+                             *,
+                             *:before,
+                             *:after {
+                                 padding: 0;
+                                 margin: 0;
+                                 border: 0;
+                                 box-sizing: border-box;
+                             }
+                             
+                             html,
+                             body {
+                                 margin: 0;
+                                 font-family: 'Manrope', sans-serif;
+                                 color: rgb(27, 21, 7);
+                                 font-size: 14px;
+                                 line-height: 24px;
+                             }
+                             
+                             a {
+                                 color: rgb(27, 21, 7);
+                                 font-weight: bold;
+                                 text-decoration: none;
+                             }
+                             
+                             h1,
+                             h2 {
+                                 font-size: 20px;
+                                 text-align: center;
+                             }
+                             
+                             ul {
+                                 list-style: none;
+                             }
+                             
+                             //  single page
+                             //  galery
+                             .galery {
+                                 max-width: 1200px;
+                                 margin: 0 auto;
+                                 position: relative;
+                                 transition: 1s;
+                                 display: flex;
+                             }
+                             
+                             .galery-wrapper {
+                                 .galery-items {
+                                     display: flex;
+                                     //  max-height: 500px;
+                                     margin: 10px 10px 0 10px;
+                                     cursor: pointer;
+                                     max-height: 500px;
+                                     overflow: hidden;
+                                     object-fit: contain;
+                                     .arrow-prew,
+                                     .arrow-next {
+                                         margin: 20% 10px;
+                                     }
+                                     .item {
+                                         width: 100%;
+                                         height: 100%;
+                                         transition: background-color 0.6s ease;
+                                         display: none;
+                                         object-fit: contain;
+                                         img {
+                                             width: 100%;
+                                             border: none !important;
+                                             box-shadow: none !important;
+                                         }
+                                     }
+                                     .item.active {
+                                         display: block;
+                                     }
+                                 }
+                             }
+                             
+                             .galery-row__container {
+                                 max-width: 800px;
+                                 overflow: hidden;
+                                 height: 200px;
+                             }
+                             
+                             .galery-row {
+                                 display: flex;
+                                 position: relative;
+                                 img {
+                                     cursor: pointer;
+                                     height: 150px;
+                                     width: 200px;
+                                     margin: 10px 5px 15px;
+                                     object-fit: contain;
+                                     transition: background-color 0.6s ease;
+                                     opacity: 0.5;
+                                 }
+                                 img.active {
+                                     opacity: 1;
+                                 }
+                             }
+                             
+                             .short-description {
+                                 margin: 0 0 0 10px;
+                                 .button {
+                                     text-align: center;
+                                     margin: 15px 0 25px;
+                                 }
+                             }
+                             
+                             .description-product {
+                                 ul {
+                                     display: flex;
+                                     color: #014b00;
+                                     font-weight: bold;
+                                     text-align: center;
+                                     li {
+                                         padding: 8px 50px;
+                                         border: 1px solid #014b00;
+                                         margin-right: 10px;
+                                         border-radius: 5px;
+                                     }
+                                 }
+                             }
+                             
+                             .description-product {
+                                 ul.active {
+                                     display: flex;
+                                     color: #014b00;
+                                     font-weight: bold;
+                                     text-align: center;
+                                     li {
+                                         padding: 8px 50px;
+                                         border: 1px solid #014b00;
+                                         margin-right: 10px;
+                                         border-radius: 5px;
+                                     }
+                                 }
+                             }
+                             
+                             .tab-description.active {
+                                 background: #014b00;
+                                 color: #e1f9e0;
+                                 transition: 1s;
+                             }
+                             
+                             .tab-item {
+                                 margin: 10px 0;
+                                 display: none;
+                             }
+                             
+                             .tab-item.active {
+                                 display: block;
+                             }
+                             
+                             @media (max-width: 1150px) {
+                                 .galery {
+                                     display: block;
+                                 }
+                                 .galery-wrapper {
+                                     max-width: 1000px;
+                                     .galery-row__container {
+                                         overflow: hidden;
+                                         margin: 0 auto;
+                                     }
+                                 }
+                             }
+                             
+                             @media (max-width: 800px) {
+                                 .galery-row__container {
+                                     display: none;
+                                 }
+                                 .description-product {
+                                     ul {
+                                         display: block;
+                                     }
+                                 }
+                             }
+                             
+                             // popup-menu      
+                             .popup {
+                                 position: fixed;
+                                 z-index: 10;
+                                 top: 0;
+                                 left: 0;
+                                 background: rgba(0, 0, 0, .7);
+                                 width: 100%;
+                                 height: 100%;
+                                 overflow: auto;
+                                 pointer-events: none;
+                                 opacity: 0;
+                                 visibility: hidden;
+                             }
+                             
+                             .popup__form {
+                                 max-width: 250px;
+                                 display: block;
+                                 margin: 0 auto;
+                                 .button {
+                                     margin: 15px auto;
+                                     text-align: center;
+                                 }
+                                 input {
+                                     height: 25px;
+                                     margin: 5px 40px;
+                                     text-align: center;
+                                     border-radius: 30px;
+                                     background: white;
+                                     margin-bottom: 8px;
+                                     color: #014b00;
+                                     font-weight: bold;
+                                     padding: 20px 0;
+                                     border: 2px solid transparent;
+                                     outline: none;
+                                 }
+                                 p {
+                                     text-align: center;
+                                 }
+                             }
+                             
+                             .popup__form {
+                                 input:focus {
+                                     border: 2px #014b00 solid;
+                                 }
+                             }
+                             
+                             .popup.active {
+                                 pointer-events: auto;
+                                 opacity: 1;
+                                 visibility: visible;
+                             }
+                             
+                             .popup__wrapper {
+                                 display: table;
+                                 height: 100%;
+                                 width: 100%;
+                             }
+                             
+                             .popup__inner {
+                                 display: table-cell;
+                                 vertical-align: middle;
+                                 padding: 50px 0;
+                             }
+                             
+                             .popup__content {
+                                 background: #e1f9e0;
+                                 padding: 20px 0;
+                                 max-width: 400px;
+                                 margin: 0 auto;
+                                 position: relative;
+                                 border-radius: 20px;
+                             }
+                             
+                             .btn-close {
+                                 border: none;
+                                 cursor: pointer;
+                                 background: none;
+                                 padding: 0;
+                                 width: 50px;
+                                 height: 50px;
+                                 display: inline-block;
+                                 transition: 1s, opacity .2s;
+                                 position: absolute;
+                                 top: 20px;
+                                 right: 20px;
+                             }
+                             
+                             .btn-close:hover {
+                                 transform: scale(1.5);
+                             }
+                             
+                             .btn-close.active {
+                                 transform: scale(0.9);
+                                 opacity: .8;
+                             }
+                             
+                             .btn-close::before,
+                             .btn-close::after {
+                                 content: '';
+                                 background: #014b00;
+                                 height: 40px;
+                                 width: 3px;
+                                 position: absolute;
+                                 border-radius: 10px;
+                                 top: 50%;
+                             }
+                             
+                             .btn-close::before {
+                                 transform: translateY(-50%) rotate(45deg);
+                             }
+                             
+                             .btn-close::after {
+                                 transform: translateY(-50%) rotate(-45deg);
+                             }
+                             
+                             .container {
+                                 max-width: 1200px;
+                                 align-items: center;
+                                 margin: 0 auto;
+                                 padding: 0 10px 0 10px;
+                             }
+                             
+                             .header_menu {
+                                 max-width: 1200px;
+                                 margin: 0 auto;
+                                 padding: 0 10px 0 10px;
+                             }
+                             
+                             .header__info-block {
+                                 display: flex;
+                                 align-items: center;
+                                 max-width: 1200px;
+                                 justify-content: space-between;
+                                 .info-line {
+                                     display: flex;
+                                     justify-content: space-between;
+                                     width: 70%;
+                                     align-items: center;
+                                 }
+                             }
+                             
+                             .header__contact {
+                                 display: flex;
+                                 .item {
+                                     display: flex;
+                                 }
+                             }
+                             
+                             .header__menu-mini {
+                                 max-width: 1200px;
+                                 display: flex;
+                                 z-index: 5;
+                                 transition: 1s;
+                             }
+                             
+                             .header__menu-mini.active {
+                                 position: fixed;
+                                 background: white;
+                                 justify-content: space-between;
+                             }
+                             
+                             //   меню навигации начало 
+                             .header__list {
+                                 display: flex;
+                                 li {
+                                     margin-right: 30px;
+                                 }
+                                 ul {
+                                     opacity: 0;
+                                     transition: background-color 2s;
+                                     position: absolute;
+                                     li {
+                                         border-bottom: 1px solid #014b00;
+                                         width: 200px;
+                                         margin: 0 5px;
+                                         background: #f5f5f5;
+                                         text-align: center;
+                                     }
+                                     li:hover>ul {
+                                         display: block;
+                                         position: absolute;
+                                         left: 100%;
+                                         top: 0;
+                                         opacity: 1;
+                                     }
+                                     ul {
+                                         opacity: 0;
+                                         transition: background-color 2s;
+                                     }
+                                 }
+                                 li:hover>ul {
+                                     display: block;
+                                     position: absolute;
+                                     opacity: 1;
+                                 }
+                             }
+                             
+                             //  мобильное меню
+                             .mobile-menu {
+                                 display: none;
+                             }
+                             
+                             //  слайдер
+                             // 
+                             .slider {
+                                 max-width: 1200px;
+                                 margin: 0 auto;
+                                 position: relative;
+                                 transition: 1s;
+                                 display: flex;
+                                 .button {
+                                     margin: 10px auto;
+                                 }
+                             }
+                             
+                             .slider-wrapper {
+                                 max-width: 600px;
+                             }
+                             
+                             .slider-items {
+                                 max-width: 600px;
+                                 display: flex;
+                                 //  max-height: 500px;
+                                 margin: 10px 10px 0 10px;
+                                 cursor: pointer;
+                             }
+                             
+                             .slide-item {
+                                 width: 100%;
+                                 height: 100%;
+                                 display: none;
+                                 transition: background-color 0.6s ease;
+                             }
+                             
+                             .slide-item.active {
+                                 display: block;
+                             }
+                             
+                             .slide-item img {
+                                 object-fit: cover;
+                                 width: 100%;
+                                 border: none !important;
+                                 box-shadow: none !important;
+                             }
+                             
+                             .slider-dots__box {
+                                 overflow: hidden;
+                                 max-width: 600px;
+                             }
+                             
+                             .slider-dots {
+                                 display: flex;
+                                 img {
+                                     cursor: pointer;
+                                     height: 200px;
+                                     width: 200px;
+                                     margin: 10px 5px 15px;
+                                     object-fit: contain;
+                                     //  display: inline-block;
+                                     transition: background-color 0.6s ease;
+                                     opacity: 0.5;
+                                 }
+                                 span.active {
+                                     opacity: 1;
+                                 }
+                             }
+                             
+                             @media (max-width: 700px) {
+                                 .slider-dots {
+                                     display: none;
+                                 }
+                             }
+                             
+                             //  .dot {
+                             //      cursor: pointer;
+                             //      height: 15px;
+                             //      width: 15px;
+                             //      margin: 10px 5px 15px;
+                             //      background: #014b00;
+                             //      border-radius: 50%;
+                             //      //  display: inline-block;
+                             //      transition: background-color 0.6s ease;
+                             //      opacity: 0.5;
+                             //  }
+                             // 
+                             /* Анимация слайдов */
+                             
+                             .slide-item {
+                                 -webkit-animation-name: fade;
+                                 -webkit-animation-duration: 1.5s;
+                                 animation-name: fade;
+                                 animation-duration: 1.5s;
+                             }
+                             
+                             @-webkit-keyframes fade {
+                                 from {
+                                     opacity: .4
+                                 }
+                                 to {
+                                     opacity: 1
+                                 }
+                             }
+                             
+                             @keyframes fade {
+                                 from {
+                                     opacity: .4
+                                 }
+                                 to {
+                                     opacity: 1
+                                 }
+                             }
+                             
+                             //  категории начало
+                             .main {
+                                 transition: 1s;
+                             }
+                             
+                             .content__category {
+                                 margin: 0 auto;
+                             }
+                             
+                             .category__items {
+                                 display: flex;
+                                 max-width: 1200px;
+                                 flex-wrap: wrap;
+                                 justify-content: start;
+                                 margin: 0 auto;
+                             }
+                             
+                             .category__item {
+                                 display: block;
+                                 position: relative;
+                                 margin: 10px auto;
+                                 //  max-width: 30%;
+                             }
+                             
+                             .category__item img {
+                                 width: 100%;
+                             }
+                             
+                             //  main меню
+                             //  футер
+                             .footer {
+                                 width: 100%;
+                                 height: 100%;
+                                 background: rgb(28, 21, 7);
+                                 margin: 20px 0;
+                             }
+                             
+                             .footer-row {
+                                 flex-wrap: wrap;
+                                 display: flex;
+                                 color: #e1f9e0;
+                                 justify-content: space-between;
+                                 margin: 10px auto;
+                             }
+                             
+                             .footer-row a {
+                                 color: #e1f9e0;
+                             }
+                             
+                             .footer-col {
+                                 text-align: center;
+                                 padding-top: 20px;
+                             }
+                             /*------------кнопка ----------*/
+                             
+                             .btn {
+                                 position: absolute;
+                                 width: 200px;
+                                 line-height: 35px;
+                                 color: #e1f9e0;
+                                 background-color: #014b00;
+                                 border-radius: 8px 8px;
+                                 transition: background-color .2s linear;
+                                 opacity: .9;
+                                 text-align: center;
+                                 font-size: 16px;
+                                 font-weight: 400;
+                                 margin: auto;
+                                 top: 80%;
+                                 left: 0;
+                                 right: 0;
+                             }
+                             
+                             .btn:hover {
+                                 background-color: rgb(41 31 7);
+                                 opacity: 1;
+                             }
+                             
+                             .header__btn {
+                                 padding: 10px 20px;
+                                 color: #e1f9e0;
+                                 background-color: #014b00;
+                                 border-radius: 8px 8px;
+                                 transition: background-color .2s linear;
+                                 text-align: center;
+                                 font-weight: 400;
+                             }
+                             
+                             .header__btn:hover {
+                                 background-color: rgb(41 31 7);
+                                 opacity: 1;
+                             }
+                             
+                             @media (min-width: 1001px) {
+                                 .category__item {
+                                     width: 30%;
+                                 }
+                                 .menu-burger__contacts {
+                                     display: none;
+                                 }
+                             }
+                             
+                             @media (min-width: 800px) and (max-width: 1000px) {
+                                 .menu-burger__contacts {
+                                     display: none;
+                                 }
+                                 .category__items {
+                                     max-width: 100%;
+                                     padding: 0 auto;
+                                 }
+                                 .category__item {
+                                     margin: 0 auto;
+                                     width: 47%;
+                                 }
+                             }
+                             
+                             @media (max-width: 799px) {
+                                 .category__items {
+                                     max-width: 100%;
+                                     padding: 0 10px;
+                                 }
+                                 .category__item {
+                                     width: 100%;
+                                     margin: 0 auto;
+                                 }
+                             }
+                             
+                             @media (max-width: 800px) {
+                                 .logo {
+                                     text-align: center;
+                                 }
+                                 // мобильное меню
+                                 .header__info-block {
+                                     display: block;
+                                     .info-line {
+                                         display: none;
+                                     }
+                                     .info-line.active {
+                                         display: block;
+                                     }
+                                 }
+                                 .header_menu {
+                                     max-width: 100%;
+                                     height: 50px;
+                                     display: block;
+                                     background: white;
+                                 }
+                                 .mobile-menu__header {
+                                     justify-content: space-between;
+                                     height: 60px;
+                                     border-bottom: 2px solid #014b00;
+                                 }
+                                 .header__menu-mini {
+                                     display: block;
+                                 }
+                                 .header__list {
+                                     display: block;
+                                     li {
+                                         margin: 30px;
+                                         border-bottom: 1px solid #014b00;
+                                     }
+                                     ul {
+                                         opacity: 0;
+                                         transition: background-color 2s;
+                                         position: absolute;
+                                         top: -100px;
+                                         height: 0;
+                                         left: 0;
+                                         li:hover>ul {
+                                             display: block;
+                                             position: relative;
+                                             left: 0;
+                                             background-color: white;
+                                             top: 0;
+                                             opacity: 1;
+                                             transition: 1s;
+                                             height: 100%;
+                                             width: 100px;
+                                         }
+                                         ul {
+                                             opacity: 0;
+                                             transition: background-color 2s;
+                                             position: relative;
+                                             top: 999em;
+                                             height: 0;
+                                         }
+                                     }
+                                     li:hover>ul {
+                                         display: block;
+                                         position: relative;
+                                         opacity: 1;
+                                         background-color: white;
+                                         top: 0;
+                                         transition: 1s;
+                                         height: 100%;
+                                     }
+                                 }
+                             }
+                             
+                             @media (max-width: 400px) {
+                                 .btn {
+                                     position: absolute;
+                                     width: 150px;
+                                     line-height: 30px;
+                                     color: #e1f9e0;
+                                     background-color: #014b00;
+                                     border-radius: 8px 8px;
+                                     transition: background-color .2s linear;
+                                     opacity: .9;
+                                     text-align: center;
+                                     font-size: 14px;
+                                     font-weight: 400;
+                                     margin: auto;
+                                     top: 80%;
+                                     left: 0;
+                                     right: 0;
+                                 }
+                             }
